@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#e5304c</color>
-    <color name="colorPrimaryDark">#e5304c</color>
+    <!--<color name="colorPrimary">#e5304c</color>
+    <color name="colorPrimaryDark">#e5304c</color>-->
+    <color name="colorPrimary">#ee9ca7</color>
+    <color name="colorPrimaryDark">#ffdde1</color>
     <color name="colorAccent">#ffffff</color>
     <color name="black_overlay">#66000000</color>
 
     <array name="dot_colors">
-        <item>#03A9F4</item>
-        <item>#E65100</item>
-        <item>#FFBB00</item>
+        <item>#12c2e9</item>
+        <item>#c471ed</item>
+        <item>#f64f59</item>
     </array>
 
 </resources>
