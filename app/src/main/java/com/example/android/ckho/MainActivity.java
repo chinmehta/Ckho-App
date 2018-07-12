@@ -93,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         upcomingEventsListView.setAdapter(mAdapter);
         pastEventsListView.setAdapter(mSecondAdapter);
 
-        ListUtils.setDynamicHeight(upcomingEventsListView);
-        ListUtils.setDynamicHeight(pastEventsListView);
 
         upcomingEventsListView.setBackgroundResource(R.drawable.customshape);
         pastEventsListView.setBackgroundResource(R.drawable.customshape);
@@ -241,25 +239,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
     }
 
-    public static class ListUtils {
-        public static void setDynamicHeight(ListView mListView) {
-            ListAdapter mListAdapter = mListView.getAdapter();
-            if (mListAdapter == null) {
-                // when adapter is null
-                return;
-            }
-            int height = 0;
-            int desiredWidth = MeasureSpec.makeMeasureSpec(mListView.getWidth(), MeasureSpec.UNSPECIFIED);
-            for (int i = 0; i < mListAdapter.getCount(); i++) {
-                View listItem = mListAdapter.getView(i, null, mListView);
-                listItem.measure(desiredWidth, MeasureSpec.UNSPECIFIED);
-                height += listItem.getMeasuredHeight();
-            }
-            ViewGroup.LayoutParams params = mListView.getLayoutParams();
-            params.height = height + (mListView.getDividerHeight() * (mListAdapter.getCount() - 1));
-            mListView.setLayoutParams(params);
-            mListView.requestLayout();
-        }
-    }
 
 }
